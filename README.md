@@ -33,7 +33,7 @@ line 2
 
 ## Bob
 
-[`Bob`'s PR](https://github.com/andreasfelix/when-git-fails/pull/2) consists of a single commit where he adds his name inbetween of the existing code:
+[`Bob`'s PR](https://github.com/andreasfelix/when-git-fails/pull/2) consists of a single commit where he adds his name in between the existing code:
 
 ```diff
 line 1
@@ -69,9 +69,20 @@ line 2
 
 ## What Happened?
 
-Git uses a [three-way-merge](https://en.wikipedia.org/wiki/Merge_(version_control)#Three-way_merge) strategy (more precisly the [`ort` strategy](https://git-scm.com/docs/merge-strategies#Documentation/merge-strategies.txt-ort)), which does not consider intermediate commits. It analyzes the differences between the latest commits of the two commit histories and their common ancestor commit. 
+Git uses a [three-way-merge](https://en.wikipedia.org/wiki/Merge_(version_control)#Three-way_merge) strategy (more precisely the [`ort` strategy](https://git-scm.com/docs/merge-strategies#Documentation/merge-strategies.txt-ort)), which does not consider intermediate commits. It analyzes the differences between the latest commits of the two commit histories and their common ancestor commit.
 
-In this scenario, both `Alice`'s version and the common ancestor begin with:
+```mermaid
+flowchart LR
+ Start --> A1(Alice 1st)
+ A1 --> A2(Alice 2nd)
+ A2--> End
+ Start --> Bob
+ Bob --> End
+```
+
+So in our case, it will only compare the 2nd commit of `Alice` with the one of `Bob` and doesn't take into consideration the first commit of `Alice`. The information on how she arrived at a specific version of the code is lost.
+
+Specifically, both `Alice`'s 2nd commit and the common ancestor begin with:
 
 ```
 line 1
