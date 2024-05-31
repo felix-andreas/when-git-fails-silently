@@ -45,7 +45,9 @@ line 2
 
 You are tasked with reviewing the PRs from [`Alice`](https://github.com/andreasfelix/when-git-fails/pull/1) and [`Bob`](https://github.com/andreasfelix/when-git-fails/pull/2).
 
-You inspect the `diff` for both PRs by clicking on *Files changed*. At first glance, everything seems fine. After merging both PRs, you anticipate the code to appear as follows:
+First you inspect the two diffs ([#1](https://github.com/felix-andreas/when-git-fails-silently/pull/1/commits/c048f75d91672ddeadc4c569c2620c1f61234197) and [#2](https://github.com/felix-andreas/when-git-fails-silently/pull/1/commits/8a89683d3fcb66f2a135700c0ce5e1e05eba3d1a)) of `Alice`'s commits and then merge her PR. Then, you proceed to review the  [`diff` of `Bob`'s PR](https://github.com/felix-andreas/when-git-fails-silently/pull/1/files).
+
+After merging both PRs, you anticipate the code to appear as follows:
 
 ```
 line 1
